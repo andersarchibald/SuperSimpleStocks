@@ -33,6 +33,7 @@ public class SuperSimpleStocksView {
 		System.out.println("3. Sell a Stock");
 		System.out.println("4. View the GBCE All Share Index");
 		System.out.println("5. View the help documentation");
+		System.out.println("6. Exit");
 		System.out.println("Enter option number:");
 
 		try {
@@ -49,11 +50,13 @@ public class SuperSimpleStocksView {
 				allShareIndexDisplay();
 			case 5:
 				help();
+			case 6:
+				System.exit(0);
 			default:
 				help();
 			}
 		} catch (NumberFormatException nfe) {
-			System.err.println("Invalid Selection! - please enter a number between 1 and 5");
+			System.err.println("Invalid Selection! - please enter a number between 1 and 6");
 			displayMenu();
 		} catch (IOException e) {
 			System.err.println("An error has occurred! - please try again.");
@@ -175,7 +178,7 @@ public class SuperSimpleStocksView {
 		System.out.println("\n");
 		System.out.println("1. Analyse a stock");
 		System.out.println("This option will prompt you for a stock to analyse. Use the number of the stock symbol to make the selection and then press enter.");
-		System.out.println("The analysis will display the stock symbol, dividned yield, PE Ratio and Stock Price.");
+		System.out.println("The analysis will display the stock symbol, dividend yield, PE Ratio and Stock Price.");
 		System.out.println("\n");
 		System.out.println("2. Buy a Stock");
 		System.out.println("This option will prompt you for a stock to buy. Use the number of the stock symbol displayed to make a selection then press enter.");

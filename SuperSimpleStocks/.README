@@ -1,0 +1,33 @@
+
+
+Welcome to the SuperSimpleStocks!
+
+As a convenience I have added a runnable jar to the repo. The application has been written in Java (version 8). To run the jar from the command line:
+
+java -jar SuperSimpleStocks.jar
+
+
+***********Super Simple Stock Help Menu***********
+
+To select an option from the menu, enter the number of the option and then press enter.
+
+1. Analyse a stock
+This option will prompt you for a stock to analyse. Use the number of the stock symbol to make the selection and then press enter.
+The analysis will display the stock symbol, dividend yield, PE Ratio and Stock Price.
+
+2. Buy a Stock
+This option will prompt you for a stock to buy. Use the number of the stock symbol displayed to make a selection then press enter.
+You will be prompted to enter a buy price, enter the price and press enter.
+You will be prompted to enter the quantity of stocks you wish to buy, enter the quantity and press enter.
+A message shall be shown indicating whether the trade has been successful.
+
+3. Sell a Stock
+This option will prompt you for a stock to sell. Use the number of the stock symbol displayed to make a selection then press enter.
+You will be prompted to enter a sell price, enter the price and press enter.
+You will be prompted to enter the quantity of stocks you wish to sell, enter the quantity and press enter.
+A message shall be shown indicating whether the trade has been successful.
+
+4. View the GBCE All Share Index
+This option will display the GBCE All Share Index.
+
+****************************************
