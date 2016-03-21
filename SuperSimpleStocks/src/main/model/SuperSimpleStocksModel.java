@@ -29,9 +29,7 @@ public class SuperSimpleStocksModel {
 	private static final int TRADE_LAG = 15;
 
 	private List<Stock> stocks = new ArrayList<Stock>();
-	
-	//Using arraydeque as it will retain the order of the trades as they are made
-	private ArrayDeque<Trade> trades = new ArrayDeque<Trade>();
+	private List<Trade> trades = new ArrayList<Trade>();
 	
 	/**
 	 * The intialise stocks method populates the application with an initial set of data. No trades are created, only the specified Stocks.
@@ -171,7 +169,7 @@ public class SuperSimpleStocksModel {
 		return stocks;
 	}
 
-	public ArrayDeque<Trade> getTrades() {
+	public List<Trade> getTrades() {
 		return trades;
 	}
 }

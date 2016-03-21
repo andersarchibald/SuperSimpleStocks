@@ -1,6 +1,9 @@
 package test;
 
 import static org.junit.Assert.assertTrue;
+
+import java.util.List;
+
 import main.SuperSimpleStocks;
 import main.model.SuperSimpleStocksModel;
 import main.model.stocks.Stock;
@@ -12,13 +15,12 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class SuperSimpleStocksTest {
-	private SuperSimpleStocks superSimpleStocks;
 	private SuperSimpleStocksModel superSimpleStocksModel;
 
 	@Before
 	public void setUp() throws Exception {
-		superSimpleStocks = new SuperSimpleStocks();
-		superSimpleStocksModel = superSimpleStocks.getModel();
+		superSimpleStocksModel = new SuperSimpleStocksModel();
+		superSimpleStocksModel.initialiseStocks();
 		
 		//create some trades
 		Trade t1 =  new Trade();
@@ -111,7 +113,8 @@ public class SuperSimpleStocksTest {
 	public void buyStock() {
 		Stock joeStock = superSimpleStocksModel.getStocks().get(2);
 		superSimpleStocksModel.addTrade(joeStock, 10, 350.30, TradeType.BUY);
-		Trade latestTrade = superSimpleStocksModel.getTrades().getLast();
+		List<Trade> trades = superSimpleStocksModel.getTrades();
+		Trade latestTrade = trades.get(trades.size()-1);
 		Stock testStock = latestTrade.getStock();
 		assertTrue(testStock.getSymbol().equals("JOE"));
 	}
@@ -120,9 +123,15 @@ public class SuperSimpleStocksTest {
 	public void sellStock() {
 		Stock ginStock = superSimpleStocksModel.getStocks().get(1);
 		superSimpleStocksModel.addTrade(ginStock, 1000, 6.80, TradeType.SELL);
-		Trade latestTrade = superSimpleStocksModel.getTrades().getLast();
+		List<Trade> trades = superSimpleStocksModel.getTrades();
+		Trade latestTrade = trades.get(trades.size()-1);
 		Stock testStock = latestTrade.getStock();
 		assertTrue(testStock.getSymbol().equals("GIN"));
+	}
+	
+	@Test
+	public void viewTrades(){
+		assertTrue(superSimpleStocksModel.getTrades().size() == 3);
 	}
 	
 }

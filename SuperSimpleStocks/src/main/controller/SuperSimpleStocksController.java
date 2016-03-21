@@ -1,9 +1,12 @@
 package main.controller;
 
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.List;
 
 import main.model.SuperSimpleStocksModel;
 import main.model.stocks.Stock;
+import main.model.trades.Trade;
 import main.model.trades.TradeType;
 import main.view.SuperSimpleStocksView;
 
@@ -19,7 +22,6 @@ public class SuperSimpleStocksController {
 	
 	
 	private SuperSimpleStocksModel model;
-	private SuperSimpleStocksView view;
 	
 	/**
 	 * This method runs the following calculations for a selected stock:  Dividend Yield, P/E Ration and Stock Price based on trades made in the last 15 minutes. 
@@ -64,6 +66,18 @@ public class SuperSimpleStocksController {
 	}
 	
 	/**
+	 * @return All trade records as a collection of strings
+	 */
+	public List<String> getAllTrades(){
+		List<String> tradeRecords =  new ArrayList<String>();
+		for(Trade trade : model.getTrades()){
+			String tradeRecord = trade.getStock().getSymbol()+" trade type:"+trade.getTradeType()+" price:"+trade.getPrice()+" quantity:"+trade.getQuantity()+" timestamp:"+trade.getTimestamp().format(DateTimeFormatter.ofPattern("dd/MM/yyyy  hh:mm:ss"));
+			tradeRecords.add(tradeRecord);
+		}
+		return tradeRecords;
+	}
+	
+	/**
 	 * Method used to execute the GBCE all share index calculation.
 	 * @return The GBCE All Share index value is returned.
 	 */
@@ -88,13 +102,4 @@ public class SuperSimpleStocksController {
 	public void setModel(SuperSimpleStocksModel model) {
 		this.model = model;
 	}
-
-	public void setView(SuperSimpleStocksView view) {
-		this.view = view;
-	}
-
-
-	
-
-
 }

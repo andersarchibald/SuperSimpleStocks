@@ -2,7 +2,9 @@
 
 Welcome to the SuperSimpleStocks!
 
-As a convenience I have added a runnable jar to the repo. The application has been written in Java (version 8). To run the jar from the command line:
+As a convenience I have added a runnable jar to the repo. The application has been written in Java (version 8) using eclipse. 
+
+To run the jar from the command line:
 
 java -jar SuperSimpleStocks.jar
 

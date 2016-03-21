@@ -16,7 +16,7 @@ public class Trade {
 	private int quantity;
 	private LocalDateTime timestamp;
 	private TradeType tradeType;
-	private double price;
+	private double price; //For the purposes of keeping this app simple I'm using double for the price. If this app were to be developed I would look to represent money through an object.
 	
 	public Trade(){
 		timestamp = LocalDateTime.now();

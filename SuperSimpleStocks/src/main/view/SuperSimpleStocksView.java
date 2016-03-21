@@ -29,11 +29,12 @@ public class SuperSimpleStocksView {
 		System.out.println("Welcome to Super Simple Stocks");
 		System.out.println("Your options are:");
 		System.out.println("1. Analyse a stock");
-		System.out.println("2. Buy a Stock");
-		System.out.println("3. Sell a Stock");
-		System.out.println("4. View the GBCE All Share Index");
-		System.out.println("5. View the help documentation");
-		System.out.println("6. Exit");
+		System.out.println("2. Buy a stock");
+		System.out.println("3. Sell a stock");
+		System.out.println("4. View all trades");
+		System.out.println("5. View the GBCE All Share Index");
+		System.out.println("6. View the help documentation");
+		System.out.println("7. Exit");
 		System.out.println("Enter option number:");
 
 		try {
@@ -46,11 +47,13 @@ public class SuperSimpleStocksView {
 				tradeAStock(TradeType.BUY);
 			case 3 : 
 				tradeAStock(TradeType.SELL);
-			case 4:
-				allShareIndexDisplay();
+			case 4 : 
+				viewAllTrades();
 			case 5:
-				help();
+				allShareIndexDisplay();
 			case 6:
+				help();
+			case 7:
 				System.exit(0);
 			default:
 				help();
@@ -156,6 +159,23 @@ public class SuperSimpleStocksView {
 			displayMenu();
 		}
 		
+	}
+	
+	/**
+	 * This method displays all the trades recorded by the application
+	 */
+	private void viewAllTrades(){
+		System.out.println("\n");
+		List<String> tradeRecords = controller.getAllTrades();
+		if(tradeRecords.size() == 0){
+			System.out.println("No trades made.");
+		}else{
+			for(String record : tradeRecords){
+				System.out.println(record);
+			}
+		}
+		System.out.println("\n");
+		displayMenu();
 	}
 
 
