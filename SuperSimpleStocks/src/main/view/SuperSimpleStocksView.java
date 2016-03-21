@@ -212,7 +212,10 @@ public class SuperSimpleStocksView {
 		System.out.println("You will be prompted to enter the quantity of stocks you wish to sell, enter the quantity and press enter.");
 		System.out.println("A message shall be shown indicating whether the trade has been successful.");
 		System.out.println("\n");
-		System.out.println("4. View the GBCE All Share Index");
+		System.out.println("4. View all trades");
+		System.out.println("This option will display all the trades recorded in the system.");
+		System.out.println("\n");
+		System.out.println("5. View the GBCE All Share Index");
 		System.out.println("This option will display the GBCE All Share Index.");
 		System.out.println("\n");
 		System.out.println("****************************************");

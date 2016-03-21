@@ -29,7 +29,10 @@ You will be prompted to enter a sell price, enter the price and press enter.
 You will be prompted to enter the quantity of stocks you wish to sell, enter the quantity and press enter.
 A message shall be shown indicating whether the trade has been successful.
 
-4. View the GBCE All Share Index
+4. View all trades
+This option will display all the trades recorded in the system.
+
+5. View the GBCE All Share Index
 This option will display the GBCE All Share Index.
 
 ****************************************
